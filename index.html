@@ -103,10 +103,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>This is a simple Quarto document that demonstrates how to create and display a matplotlib graph.</p>
 </section>
+<section id="what-is-matplotlib" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-matplotlib">What is Matplotlib?</h2>
+<p>Matplotlib is a comprehensive Python library for creating static, animated, and interactive visualizations. It was created by John D. Hunter in 2003 and has since become the foundation of the Python data visualization ecosystem. Matplotlib provides a MATLAB-like interface for plotting and is built on NumPy arrays.</p>
+<section id="key-features-of-matplotlib" class="level3">
+<h3 class="anchored" data-anchor-id="key-features-of-matplotlib">Key Features of Matplotlib:</h3>
+<ul>
+<li><strong>Versatile Plotting</strong>: Supports line plots, scatter plots, bar charts, histograms, pie charts, contour plots, 3D plots, and many more visualization types</li>
+<li><strong>Publication Quality</strong>: Produces high-quality figures suitable for academic papers, presentations, and publications</li>
+<li><strong>Customizable</strong>: Extensive customization options for colors, fonts, styles, and layouts</li>
+<li><strong>Cross-Platform</strong>: Works seamlessly across different operating systems and Python environments</li>
+<li><strong>Integration</strong>: Integrates well with Jupyter notebooks, web applications, and GUI applications</li>
+</ul>
+</section>
+<section id="why-matplotlib-is-important" class="level3">
+<h3 class="anchored" data-anchor-id="why-matplotlib-is-important">Why Matplotlib is Important:</h3>
+<ol type="1">
+<li><strong>Data Exploration</strong>: Essential tool for exploratory data analysis, helping researchers and analysts understand patterns and relationships in data</li>
+<li><strong>Scientific Computing</strong>: Widely used in scientific research for visualizing experimental results, simulations, and theoretical models</li>
+<li><strong>Business Intelligence</strong>: Enables data scientists to create compelling visualizations for business stakeholders</li>
+<li><strong>Educational Tool</strong>: Helps students and professionals learn data visualization concepts and best practices</li>
+<li><strong>Industry Standard</strong>: Forms the foundation for many other Python visualization libraries like Seaborn, Plotly, and Bokeh</li>
+<li><strong>Reproducible Research</strong>: Supports reproducible scientific workflows when combined with tools like Jupyter and Quarto</li>
+</ol>
+<p>Matplotlib’s “pyplot” interface provides a simple way to create plots, while its object-oriented interface offers more control for complex visualizations. The library’s extensive documentation and large community make it accessible to both beginners and advanced users.</p>
+</section>
+</section>
 <section id="simple-line-plot" class="level2">
 <h2 class="anchored" data-anchor-id="simple-line-plot">Simple Line Plot</h2>
 <p>Here’s a basic matplotlib line plot:</p>
-<div id="5d62d090" class="cell" data-execution_count="1">
+<div id="ff27fe18" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -136,7 +162,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="bar-chart-example" class="level2">
 <h2 class="anchored" data-anchor-id="bar-chart-example">Bar Chart Example</h2>
 <p>Here’s another example with a bar chart:</p>
-<div id="ce18f28f" class="cell" data-execution_count="2">
+<div id="3ba6c301" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample data for bar chart</span></span>
@@ -156,6 +182,73 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div>
 <figure class="figure">
 <p><img src="index_files/figure-html/cell-3-output-1.png" width="758" height="566" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="scatter-plot-with-random-data" class="level2">
+<h2 class="anchored" data-anchor-id="scatter-plot-with-random-data">Scatter Plot with Random Data</h2>
+<p>Here’s a scatter plot showing random data points:</p>
+<div id="e1f958eb" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Set random seed for reproducibility</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate random data points</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>n_points <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.random.randn(n_points)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> x <span class="op">+</span> np.random.randn(n_points) <span class="op">*</span> <span class="fl">0.5</span>  <span class="co"># y = 2x + noise</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the scatter plot</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>plt.scatter(x, y, alpha<span class="op">=</span><span class="fl">0.6</span>, c<span class="op">=</span><span class="st">'purple'</span>, s<span class="op">=</span><span class="dv">50</span>, edgecolors<span class="op">=</span><span class="st">'black'</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'X values (random)'</span>)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Y values (2x + noise)'</span>)</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Scatter Plot of Random Data Points'</span>)</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-4-output-1.png" width="950" height="566" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="pie-chart-example" class="level2">
+<h2 class="anchored" data-anchor-id="pie-chart-example">Pie Chart Example</h2>
+<p>Here’s a pie chart showing sample data distribution:</p>
+<div id="514a76e6" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample data for pie chart</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> [<span class="st">'Python'</span>, <span class="st">'JavaScript'</span>, <span class="st">'Java'</span>, <span class="st">'C++'</span>, <span class="st">'Go'</span>, <span class="st">'Other'</span>]</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>sizes <span class="op">=</span> [<span class="dv">35</span>, <span class="dv">25</span>, <span class="dv">20</span>, <span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">5</span>]</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> [<span class="st">'#ff9999'</span>, <span class="st">'#66b3ff'</span>, <span class="st">'#99ff99'</span>, <span class="st">'#ffcc99'</span>, <span class="st">'#ff99cc'</span>, <span class="st">'#c2c2f0'</span>]</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>explode <span class="op">=</span> (<span class="fl">0.1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>)  <span class="co"># explode the first slice (Python)</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Create pie chart</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">8</span>))</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>wedges, texts, autotexts <span class="op">=</span> plt.pie(sizes, explode<span class="op">=</span>explode, labels<span class="op">=</span>labels, colors<span class="op">=</span>colors,</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>        autopct<span class="op">=</span><span class="st">'</span><span class="sc">%1.1f%%</span><span class="st">'</span>, shadow<span class="op">=</span><span class="va">True</span>, startangle<span class="op">=</span><span class="dv">90</span>)</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Customize the appearance</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>plt.setp(autotexts, size<span class="op">=</span><span class="dv">12</span>, weight<span class="op">=</span><span class="st">"bold"</span>)</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>plt.setp(texts, size<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Programming Language Popularity Distribution'</span>, fontsize<span class="op">=</span><span class="dv">16</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>, pad<span class="op">=</span><span class="dv">20</span>)</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">'equal'</span>)  <span class="co"># Equal aspect ratio ensures that pie is drawn as a circle</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-5-output-1.png" width="950" height="758" class="figure-img"></p>
 </figure>
 </div>
 </div>
